@@ -1,5 +1,6 @@
 {
   "name": "recompose",
+  "version": "0.31.0",
   "private": true,
   "author": "Andrew Clark <acdlite@me.com>",
   "repository": {
