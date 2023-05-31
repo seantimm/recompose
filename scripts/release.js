@@ -131,38 +131,38 @@ try {
     path.resolve(outDir, 'dist', `${libraryName}.cjs.js.flow`)
   )
 
-  log(`About to publish ${packageName}@${nextVersion} to npm.`)
-  if (!readline.keyInYN('Sound good? ')) {
-    log('OK. Stopping release.')
-    exit(0)
-  }
+  // log(`About to publish ${packageName}@${nextVersion} to npm.`)
+  // if (!readline.keyInYN('Sound good? ')) {
+  //   log('OK. Stopping release.')
+  //   exit(0)
+  // }
 
-  log('Publishing...')
-  if (exec(`cd ${outDir} && npm publish`).code !== 0) {
-    logError('Publish failed. Aborting release.')
-    exit(1)
-  }
+  // log('Publishing...')
+  // if (exec(`cd ${outDir} && npm publish`).code !== 0) {
+  //   logError('Publish failed. Aborting release.')
+  //   exit(1)
+  // }
 
-  logSuccess(`${packageName}@${nextVersion} was successfully published.`)
+  // logSuccess(`${packageName}@${nextVersion} was successfully published.`)
 
-  log('Updating VERSION file...')
-  writeFile(versionLoc, `${nextVersion}\n`)
+  // log('Updating VERSION file...')
+  // writeFile(versionLoc, `${nextVersion}\n`)
 
-  log('Committing changes...')
-  const newTagName = `v${nextVersion}`
-  exec(`git add ${versionLoc}`)
-  exec(`git commit -m "${packageName} ${newTagName}"`)
+  // log('Committing changes...')
+  // const newTagName = `v${nextVersion}`
+  // exec(`git add ${versionLoc}`)
+  // exec(`git commit -m "${packageName} ${newTagName}"`)
 
-  if (packageName === 'recompose') {
-    log(`Tagging release... (${newTagName})`)
-    exec(`git tag ${newTagName}`)
-  }
+  // if (packageName === 'recompose') {
+  //   log(`Tagging release... (${newTagName})`)
+  //   exec(`git tag ${newTagName}`)
+  // }
 
-  log('Pushing to GitHub...')
-  exec('git push')
-  exec('git push --tags')
+  // log('Pushing to GitHub...')
+  // exec('git push')
+  // exec('git push --tags')
 
-  logSuccess('Done.')
+  // logSuccess('Done.')
 } catch (error) {
   logError('Release failed due to an error', error)
 }
