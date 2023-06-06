@@ -90,10 +90,6 @@
     "webpack": "^2.4.1",
     "xstream": "^5.0.5"
   },
-  "devEngines": {
-    "node": "5.x",
-    "npm": "3.x"
-  },
   "dependencies": {
     "@babel/runtime": "^7.0.0",
     "change-emitter": "^0.1.2",
@@ -102,6 +98,11 @@
     "symbol-observable": "^1.0.4"
   },
   "peerDependencies": {
-    "react": "^0.14.0 || ^15.0.0 || ^16.0.0"
+    "react": "^0.14.0 || ^15.0.0 || ^16.0.0 || ^17.0.0"
+  },
+  "packageManager": "yarn@3.5.1",
+  "volta": {
+    "node": "19.7.0",
+    "yarn": "3.5.1"
   }
 }
